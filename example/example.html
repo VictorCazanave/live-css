@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Live CSS Example</title>
+	<link rel="stylesheet" href="live-css.css">
+</head>
+
+<body>
+	<header>
+		<h1>Main title</h1>
+		<h2>Subtitle</h2>
+	</header>
+
+	<section>
+		<h1>Section 1</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit earum, doloremque ad corporis quod libero vel, illum voluptatum, expedita aspernatur harum officia? Consectetur velit totam libero, perferendis atque iusto.</p>
+		<button>Click me!</button>
+	</section>
+
+	<section>
+		<h1>Section 2</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias velit earum, doloremque ad corporis quod libero vel, illum voluptatum, expedita aspernatur harum officia? Consectetur velit totam libero, perferendis atque iusto.</p>
+		<button>Click me!</button>
+	</section>
+
+	<script src="live-css.js"></script>
+	<script type="text/javascript">
+		var config = {
+			'header titles': {
+				selectors: ['header h1', 'header h2'],
+				property: 'color'
+			},
+			'section titles': {
+				selectors: ['section h1'],
+				property: 'color'
+			},
+			'button': {
+				selectors: ['button'],
+				property: 'background-color'
+			}
+		};
+
+		liveCss.init(config);
+	</script>
+</body>
+
+</html>
