@@ -1,7 +1,8 @@
 var liveCss = (function () {
 	'use strict';
 
-	var _modifiers = {};
+	var _modifiers = {},
+		_formElement;
 
 	var api = {
 		init: init
@@ -14,19 +15,20 @@ var liveCss = (function () {
 	 * @param {Object} config Live CSS configuration
 	 */
 	function init(config) {
-		var form = _initForm(),
-			index = 0;
+		var index = 0;
+
+		_formElement = _initForm();
 
 		for (var key in config) {
 			if (config.hasOwnProperty(key)) {
 				var css = config[key];
 				_addModifier(key, css.selectors, css.property);
-				_addInput(form, key, index, _modifiers[key].elements.length);
+				_addInput(_formElement, key, index, _modifiers[key].elements.length);
 				index++;
 			}
 		}
 
-		_addForm(form);
+		_addForm(_formElement);
 	}
 
 	/**
@@ -34,11 +36,29 @@ var liveCss = (function () {
 	 * @returns {Element} Container element
 	 */
 	function _initForm() {
-		//var html = '<aside id="live-css" class="live-css"><h1>Live CSS</h1><button>Export</button></aside>';
-		var form = document.createElement('aside');
-		form.className = 'css-live';
+		var formElt, titleElt, openElt, closeElt;
 
-		return form;
+		formElt = document.createElement('aside');
+		formElt.className = 'live-css';
+
+		titleElt = document.createElement('h1');
+		titleElt.className = 'live-css__title';
+		titleElt.appendChild(document.createTextNode('Live CSS Editor'));
+		formElt.appendChild(titleElt);
+
+		openElt = document.createElement('div');
+		openElt.className = 'live-css__open';
+		openElt.appendChild(document.createTextNode('>'));
+		openElt.addEventListener('click', _open);
+		formElt.appendChild(openElt);
+
+		closeElt = document.createElement('div');
+		closeElt.className = 'live-css__close';
+		closeElt.appendChild(document.createTextNode('X'));
+		closeElt.addEventListener('click', _close);
+		formElt.appendChild(closeElt);
+
+		return formElt;
 	}
 
 	/**
@@ -77,12 +97,12 @@ var liveCss = (function () {
 
 		// Row
 		row = document.createElement('div');
-		row.className = 'css-live__row';
+		row.className = 'live-css__row';
 
 		// Label
 		labelElt = document.createElement('label');
-		labelElt.className = 'css-live__row__label';
-		labelElt.setAttribute('for', 'css-live-input' + index);
+		labelElt.className = 'live-css__row__label';
+		labelElt.setAttribute('for', 'live-css-input' + index);
 		labelElt.appendChild(document.createTextNode(name + ' (' + count + ')'));
 		row.appendChild(labelElt);
 
@@ -90,8 +110,8 @@ var liveCss = (function () {
 		inputElt = document.createElement('input');
 		inputElt.setAttribute('type', 'color');
 		inputElt.name = name; // Used to get config from input
-		inputElt.id = 'css-live-input' + index;
-		inputElt.className = 'css-live__row__input';
+		inputElt.id = 'live-css-input' + index;
+		inputElt.className = 'live-css__row__input';
 		inputElt.addEventListener('focus', _hightlightElement);
 		inputElt.addEventListener('blur', _unhightlightElement);
 		inputElt.addEventListener('change', _updateStyle);
@@ -106,6 +126,20 @@ var liveCss = (function () {
 	 */
 	function _addForm(form) {
 		document.body.appendChild(form);
+	}
+
+	/**
+	 * Show container element
+	 */
+	function _open() {
+		_formElement.className = ' live-css';
+	}
+
+	/**
+	 * Hide container element
+	 */
+	function _close() {
+		_formElement.className += ' live-css--closed';
 	}
 
 	/**
