@@ -6,7 +6,6 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify'),
 	watch = require('gulp-watch'),
-
 	paths = {
 		src: './src',
 		dist: './dist',
