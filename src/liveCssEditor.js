@@ -4,11 +4,9 @@ var liveCss = (function () {
 	var _modifiers = {},
 		_formElement;
 
-	var api = {
+	return {
 		init: init
-	}
-
-	return api;
+	};
 
 	/**
 	 * Init live CSS tools
