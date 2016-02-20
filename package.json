@@ -1,0 +1,22 @@
+{
+  "name": "live-css",
+  "version": "0.0.0",
+  "description": "A simple live CSS editor",
+  "main": "dist/live-css.js",
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VictorCazanave/live-css.git"
+  },
+  "author": "Victor Cazanave",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VictorCazanave/live-css/issues"
+  },
+  "homepage": "https://github.com/VictorCazanave/live-css",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
