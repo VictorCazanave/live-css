@@ -50,10 +50,10 @@ var liveCss = (function () {
 	function _addModifier(name, selectors, property) {
 		var elements = [];
 
-		for (var selector of selectors) { // ES6
+		for (var selector of selectors) {
 			var nodes = document.querySelectorAll(selector);
 
-			//for (var node of nodes) { // ES6 not working
+			//for (var node of nodes) { // Not working
 			for (var i = 0; i < nodes.length; i++) {
 				elements.push(nodes[i]);
 			}
@@ -115,7 +115,7 @@ var liveCss = (function () {
 	function _hightlightElement(event) {
 		var modifier = _modifiers[event.target.name];
 
-		for (var element of modifier.elements) { // ES6
+		for (var element of modifier.elements) {
 			element.style.border = '1px solid red';
 		}
 	}
@@ -127,7 +127,7 @@ var liveCss = (function () {
 	function _unhightlightElement(event) {
 		var modifier = _modifiers[event.target.name];
 
-		for (var element of modifier.elements) { // ES6
+		for (var element of modifier.elements) {
 			element.style.border = 'inherit';
 		}
 	}
@@ -139,7 +139,7 @@ var liveCss = (function () {
 	function _updateStyle(event) {
 		var modifier = _modifiers[event.target.name];
 
-		for (var element of modifier.elements) { // ES6
+		for (var element of modifier.elements) {
 			element.style[modifier.property] = event.target.value;
 		}
 	}
