@@ -1,18 +1,24 @@
 .css-live {
 	position: fixed;
 	top: 0;
-	padding: 15px;
+	left: 0;
+	display: block;
 	height: auto;
+	width: 250px;
+	padding: 15px;
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
 	background-color: lightgray;
 	font-family: Arial, 'sans-serif';
 	&__row {
-		margin: 0 0 10px 0;
+		display: table-row;
+		padding: 0 0 10px 0;
 		&__label {
-			display: inline-block;
-			margin: 0 5px 0 0;
+			display: table-cell;
+			padding: 5px;
+			text-align: right;
 		}
 		&__input {
-			display: inline-block;
+			display: table-cell;
 			padding: 4px;
 		}
 	}
