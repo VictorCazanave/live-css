@@ -1,17 +1,46 @@
-.css-live {
+@width: 250px;
+@shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+@bg-color: rgba(240, 240, 240, 0.9);
+@txt-color: #333;
+.live-css {
+	box-sizing: border-box;
 	position: fixed;
 	top: 0;
 	left: 0;
 	display: block;
 	height: auto;
-	width: 250px;
+	width: @width;
 	padding: 15px;
-	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
-	background-color: lightgray;
+	box-shadow: @shadow;
+	background-color: @bg-color;
+	color: @txt-color;
 	font-family: Arial, 'sans-serif';
+	font-size: 14px;
+	&__title {
+		margin: 0 0 15px 0;
+		font-size: 1.2em;
+		text-align: center;
+	}
+	&__open {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: -17px;
+		padding: 5px;
+		box-shadow: @shadow;
+		background-color: @bg-color;
+		cursor: pointer;
+	}
+	&__close {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		padding: 5px;
+		cursor: pointer;
+	}
 	&__row {
 		display: table-row;
-		padding: 0 0 10px 0;
+		padding: 0 0 10px 10px;
 		&__label {
 			display: table-cell;
 			padding: 5px;
@@ -20,6 +49,17 @@
 		&__input {
 			display: table-cell;
 			padding: 4px;
+		}
+	}
+	&--closed {
+		left: -1*@width;
+		.live-css {
+			&__open {
+				display: block;
+			}
+			&__close {
+				display: none;
+			}
 		}
 	}
 }
