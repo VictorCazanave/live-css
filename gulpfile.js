@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+	autoprefixer = require('gulp-autoprefixer'),
 	babel = require('gulp-babel'),
 	cssmin = require('gulp-cssmin'),
 	less = require('gulp-less'),
@@ -18,6 +19,9 @@ var gulp = require('gulp'),
 gulp.task('less', function () {
 	return gulp.src(paths.less)
 		.pipe(less())
+		//.pipe(autoprefixer({
+		//	browsers: ['last 3 versions']
+		//}))
 		.pipe(gulp.dest(paths.src));
 });
 
