@@ -38,6 +38,9 @@ gulp.task('build', ['less'], function () {
 			presets: ['es2015']
 		}))
 		.pipe(uglify())
+		.pipe(rename({
+			suffix: '.min'
+		}))
 		.pipe(gulp.dest(paths.dist));
 
 	gulp.src(paths.css)

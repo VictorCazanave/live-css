@@ -1,30 +1,30 @@
 {
-  "name": "live-css",
-  "version": "0.0.0",
-  "description": "A simple live CSS editor",
-  "main": "dist/live-css.js",
-  "directories": {
-    "example": "example"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VictorCazanave/live-css.git"
-  },
-  "author": "Victor Cazanave",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/VictorCazanave/live-css/issues"
-  },
-  "homepage": "https://github.com/VictorCazanave/live-css",
-  "devDependencies": {
-    "babel-preset-es2015": "^6.5.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-babel": "^6.1.2",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-less": "^3.0.5",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.2",
-    "gulp-watch": "^4.3.5"
-  }
+	"name": "live-css",
+	"version": "0.0.0",
+	"description": "A simple live CSS editor",
+	"main": "dist/live-css.min.js",
+	"directories": {
+		"example": "example"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/VictorCazanave/live-css-editor.git"
+	},
+	"author": "Victor Cazanave",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/VictorCazanave/live-css-editor/issues"
+	},
+	"homepage": "https://github.com/VictorCazanave/live-css-editor",
+	"devDependencies": {
+		"babel-preset-es2015": "^6.5.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^3.1.0",
+		"gulp-babel": "^6.1.2",
+		"gulp-cssmin": "^0.1.7",
+		"gulp-less": "^3.0.5",
+		"gulp-rename": "^1.2.2",
+		"gulp-uglify": "^1.5.2",
+		"gulp-watch": "^4.3.5"
+	}
 }
