@@ -1,12 +1,14 @@
 # Live CSS Editor
 
-## Overview
 A simple live CSS editor in pure JavaScript (no jQuery or other library).
 
 ## Demo
 [TBA]
 
-## Installation and setup
+## Install
+[TBA]
+
+## Usage
 [TBA]
 
 ## Licence
