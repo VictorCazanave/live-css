@@ -17,6 +17,7 @@
 	color: @txt-color;
 	font-family: Arial, 'sans-serif';
 	font-size: 14px;
+	transition: left 1s ease;
 
 	&__title {
 		margin: 0 0 15px 0;
@@ -25,14 +26,14 @@
 	}
 
 	&__open {
-		display: none;
 		position: absolute;
-		top: 0;
+		top: -30px;
 		right: -17px;
 		padding: 5px;
 		box-shadow: @shadow;
 		background-color: @bg-color;
 		cursor: pointer;
+		transition: top 0s;
 	}
 
 	&__close {
@@ -65,11 +66,8 @@
 		.live-css {
 
 			&__open {
-				display: block;
-			}
-			
-			&__close {
-				display: none;
+				top: 0;
+				transition: top 0.5s ease 0.9s;
 			}
 		}
 	}
