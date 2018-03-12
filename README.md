@@ -1,2 +1,2 @@
-# [ABANDONNED] Live CSS Editor
+# [ABANDONED] Live CSS Editor
 A simple live CSS editor in pure JavaScript (no jQuery or other library).
